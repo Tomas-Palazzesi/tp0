@@ -49,6 +49,7 @@ int main(void)
 
 	leer_consola(logger);
 
+
 	/*---------------------------------------------------PARTE 3-------------------------------------------------------------*/
 
 	// ADVERTENCIA: Antes de continuar, tenemos que asegurarnos que el servidor esté corriendo para poder conectarnos a él
@@ -91,10 +92,20 @@ void leer_consola(t_log* logger)
 	leido = readline("> ");
 
 	// El resto, las vamos leyendo y logueando hasta recibir un string vacío
+	
+	while(strcmp(leido,"")!=0)
+	{
+		log_info(logger,leido);
 
+		free(leido);
 
+		leido=readline("> ");
+		
+	}
 	// ¡No te olvides de liberar las lineas antes de regresar!
+	free(leido);
 
+	return;
 }
 
 void paquete(int conexion)
