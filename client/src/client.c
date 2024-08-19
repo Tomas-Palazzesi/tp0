@@ -43,7 +43,7 @@ int main(void)
 	valor = config_get_string_value(config,"CLAVE");
 
 
-	log_info(logger , "IP: %s, PUERTO: %s, CLAVE: %s,",ip,puerto,valor);
+	log_info(logger , "IP: %s,PUERTO: %s, CLAVE: %s,",ip,puerto,valor);
 
 	/* ---------------- LEER DE CONSOLA ---------------- */
 
